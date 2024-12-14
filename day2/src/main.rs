@@ -47,7 +47,7 @@ fn part2(reports: Vec<Vec<i32>>) {
 
 struct SafetyReport {
     safe: bool,
-    unsafe_pos: Option<usize>,
+    // unsafe_pos: Option<usize>,
 }
 
 fn all_increase_or_decrease(arr: &Vec<i32>) -> SafetyReport {
@@ -63,7 +63,7 @@ fn all_increase_or_decrease(arr: &Vec<i32>) -> SafetyReport {
     } else {
         return SafetyReport {
             safe: false,
-            unsafe_pos: Some(0),
+            // unsafe_pos: Some(0),
         }
     };
 
@@ -73,7 +73,7 @@ fn all_increase_or_decrease(arr: &Vec<i32>) -> SafetyReport {
                 if arr[i] <= arr[i-1] {
                     return SafetyReport {
                         safe: false,
-                        unsafe_pos: Some(i),
+                        // unsafe_pos: Some(i),
                     }
                 }
                 ()
@@ -82,7 +82,7 @@ fn all_increase_or_decrease(arr: &Vec<i32>) -> SafetyReport {
                 if arr[i] >= arr[i-1] {
                     return SafetyReport {
                         safe: false,
-                        unsafe_pos: Some(i),
+                        //unsafe_pos: Some(i),
                     }
                 }
                 ()
@@ -92,7 +92,7 @@ fn all_increase_or_decrease(arr: &Vec<i32>) -> SafetyReport {
     
     SafetyReport {
         safe: true,
-        unsafe_pos: None,
+        // unsafe_pos: None,
     }
 }
 
@@ -102,14 +102,14 @@ fn differ_by_little(arr: &Vec<i32>) -> SafetyReport {
         if diff.abs() > 3 {
             return SafetyReport {
                 safe: false,
-                unsafe_pos: Some(i),
+                // unsafe_pos: Some(i),
             }
         }
     }
     
     SafetyReport {
         safe: true,
-        unsafe_pos: None,
+        // unsafe_pos: None,
     }
 }
 
